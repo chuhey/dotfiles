@@ -29,26 +29,5 @@ if !has('vim_starting')
     call neobundle#call_hook('on_source')
 endif
 
-" ファイルブラウザの設定 from Software Design 2015.01号記事
-let g:netwr_liststyle = 3
-let g:netwr_browse_split = 4
-let g:netwr_altv = 1
-
-function! ToggleVExplorer()
-	if !exists("t:netrw_bufnr")
-		exec '1wincmd w'
-		25Vexplore
-		let t:netrw_bufnr = bufnr("%")
-		return
-	endif
-	let win = bufwinnr(t:netrw_bufnr)
-	if win != -1
-		let cur = winnr()
-		exe win . 'wincmd w'
-		close
-		exe cur . 'wincmd w'
-	endif
-	unlet t:netrw_bufnr
-endfunction
-map <silent> <leader>e :call ToggleVExplorer()<cr><c-w>p
+set clipboard=unnamed,autoselect
 

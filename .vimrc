@@ -15,6 +15,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 NeoBundle 'junegunn/seoul256.vim'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'scrooloose/nerdtree'
 
 call neobundle#end()
 

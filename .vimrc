@@ -1,4 +1,25 @@
-set nocompatible
+set nocompatible " vi互換をOFFに
+set clipboard=unnamed,autoselect " 他アプリでのクリップボード情報を貼り付け可能に
+set incsearch " インクリメンタルサーチON
+set nobackup " バックアップとらない
+set backspace=indent,eol,start
+set showcmd " コマンドをステータス行に表示
+set showmode " 現在のモードをステータス行に表示
+set title " タイトルをウィンドウ枠に表示する
+set smartindent " 賢いインデント処理
+set scrolloff=5 " カーソルの上または下に表示する最小限の行数
+set textwidth=0 " １行の表示幅を超えても折り返さない
+set tabstop=4 " タブが対応する空白の数
+set shiftwidth=4 " タブやバックスペースなどの編集操作をした際に対応する空白の数
+set softtabstop=0 " インデントの各段階で使われる空白の数
+set expandtab " タブ挿入時に、代わりに空白を使う
+ 
+" insert モードを抜けるとIMEをOFFに
+set noimdisable
+set iminsert=0 imsearch=0
+set noimcmdline
+inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+
 
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim
@@ -16,6 +37,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'junegunn/seoul256.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 call neobundle#end()
 
@@ -25,9 +47,9 @@ filetype plugin indent on
 NeoBundleCheck
 
 if !has('vim_starting')
-    " _vimrcを読み直した時のための設定
+    " .vimrcを読み直した時のための設定
     call neobundle#call_hook('on_source')
 endif
 
-set clipboard=unnamed,autoselect
+colorscheme desert
 

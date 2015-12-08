@@ -34,6 +34,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " ここにインストールしたいプラグインの設定を書く
 "    :help neobundle-examples
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
+NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'junegunn/seoul256.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/nerdtree'

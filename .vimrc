@@ -1,3 +1,7 @@
+" Gvim向け設定
+set number " 行番号表示
+set guifont=Myrica\ M:h12,MS\ Gothic:h12 " フォント設定
+
 set nocompatible " vi互換をOFFに
 set clipboard=unnamed,autoselect " 他アプリでのクリップボード情報を貼り付け可能に
 set incsearch " インクリメンタルサーチON
@@ -13,9 +17,9 @@ set tabstop=4 " タブが対応する空白の数
 set shiftwidth=4 " タブやバックスペースなどの編集操作をした際に対応する空白の数
 set softtabstop=0 " インデントの各段階で使われる空白の数
 set expandtab " タブ挿入時に、代わりに空白を使う
- 
-" insert モードを抜けるとIMEをOFFに
-set noimdisable
+set cursorline " 現在行をハイライト
+set nowrap " 折り返しをやめる
+set noimdisable " insert モードを抜けるとIMEをOFFに
 set iminsert=0 imsearch=0
 set noimcmdline
 inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
@@ -51,6 +55,16 @@ if !has('vim_starting')
     " .vimrcを読み直した時のための設定
     call neobundle#call_hook('on_source')
 endif
+
+" 検索結果を画面中央にする
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+
+inoremap <silent> jj <ESC>
 
 colorscheme desert
 

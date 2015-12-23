@@ -1,7 +1,3 @@
-" Gvim向け設定
-set number " 行番号表示
-set guifont=Myrica\ M:h12,MS\ Gothic:h12 " フォント設定
-
 set nocompatible " vi互換をOFFに
 set clipboard=unnamed,autoselect " 他アプリでのクリップボード情報を貼り付け可能に
 set incsearch " インクリメンタルサーチON
@@ -65,6 +61,4 @@ nmap g* g*zz
 nmap g# g#zz
 
 inoremap <silent> jj <ESC>
-
-colorscheme desert
 

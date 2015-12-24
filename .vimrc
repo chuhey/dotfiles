@@ -39,6 +39,7 @@ NeoBundle 'junegunn/seoul256.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'tpope/vim-fugitive'
 
 call neobundle#end()
 
@@ -52,6 +53,9 @@ if !has('vim_starting')
     call neobundle#call_hook('on_source')
 endif
 
+" <Leader>を Space キーにマッピングする
+let mapleader="\<Space>"
+
 " 検索結果を画面中央にする
 nmap n nzz
 nmap N Nzz
@@ -61,4 +65,10 @@ nmap g* g*zz
 nmap g# g#zz
 
 inoremap <silent> jj <ESC>
+
+" Unite.vimのショートカットキーマッピング
+nnoremap <leader>f :<C-u>Unite file<CR>
+nnoremap <leader>b :<C-u>Unite buffer<CR>
+nnoremap <Leader>n :<C-u>NERDTreeToggle<CR>
+
 

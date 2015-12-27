@@ -18,6 +18,8 @@ set nowrap " 折り返しをやめる
 set noimdisable " insert モードを抜けるとIMEをOFFに
 set iminsert=0 imsearch=0
 set noimcmdline
+set noundofile " Undoファイルを作成しないようにする
+set noswapfile " Swapファイルを作成しないようにする
 inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 
 

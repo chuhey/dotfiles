@@ -1,5 +1,10 @@
 #! /bin/bash
 
-ln -s .vimrc ~/.vimrc
-ln -s .gvimrc ~/.gvimrc
+cwd=`dirname "${0}"`
+expr "${0}" : "/.*" > /dev/null || cwd=`(cd "${cwd}" && pwd)`
+
+# echo $cwd
+
+ln -sf $cwd/.vimrc ~/.vimrc
+ln -sf $cwd/.gvimrc ~/.gvimrc
 

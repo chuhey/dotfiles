@@ -12,5 +12,8 @@ Gvim向けのフォント設定で、Myrica Mを使用しているため、フ�
 3. execute "setup.bat" as administrator
 
 ## Setup for Mac OS X
-1. TODO
+1. in any directory
+2. git clone https://github.com/chuhey/dotfiles.git
+3. chmod +x setup.sh
+4. ./setup.sh
 

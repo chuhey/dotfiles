@@ -42,6 +42,8 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tpope/vim-fugitive'
+"NeoBundle 'Shougo/vimproc.vim'
+NeoBundle 'Shougo/vimshell.vim'
 
 call neobundle#end()
 

@@ -59,6 +59,8 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'bronson/vim-trailing-whitespace'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 
 call neobundle#end()
 
@@ -89,5 +91,11 @@ inoremap <silent> jj <ESC>
 nnoremap <leader>f :<C-u>Unite file<CR>
 nnoremap <leader>b :<C-u>Unite buffer<CR>
 nnoremap <Leader>n :<C-u>NERDTreeToggle<CR>
+
+" Airline
+"let g:airline_powerline_fonts=1 
+set laststatus=2
+let g:airline_theme='simple'
+let g:airline#extensions#tabline#enabled=1
 
 

@@ -32,6 +32,11 @@ call neobundle#begin(expand('~/.vim/bundle'))
 " neobundle is managed by itself.
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+" when win32 env, downloads latest dll automatically for vimproc plugin
+if has('win32')
+    let g:vimproc#download_windows_dll=1
+end
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " write plugin settings to managed by neobundle
 "    :help neobundle-examples
@@ -42,8 +47,18 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tpope/vim-fugitive'
-"NeoBundle 'Shougo/vimproc.vim'
+NeoBundle 'Shougo/vimproc.vim', {
+            \ 'build' : {
+            \    'windows' : 'tools\\update-dll-mingw',
+            \    'cygwim' : 'make -f make_cygwin.mak',
+            \    'mac' : 'make',
+            \    'linux' : 'make',
+            \    'unix' : 'gmake',
+            \    },
+            \  }
 NeoBundle 'Shougo/vimshell.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'bronson/vim-trailing-whitespace'
 
 call neobundle#end()
 
